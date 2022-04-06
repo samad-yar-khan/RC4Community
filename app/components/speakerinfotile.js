@@ -33,9 +33,7 @@ export default function SpeakerInfotiles({ data }) {
             </h6>
             <p className={Styles.speaker_bio}>{obj.short_bio}</p>
             {obj.live && (
-              <Link href={obj.confHref}>
-                <button className={Styles.actionBtn}>Live</button>
-              </Link>
+              <button className={Styles.actionBtn}>Live</button>
             )}
           </div>
         </div>

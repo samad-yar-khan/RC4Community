@@ -18,7 +18,7 @@ const Mainstage = ({ speakers }) => {
   const [timer, setTimer] = useState();
   
   useEffect(() => {
-    setInterval(() => {
+    let interval = setInterval(() => {
       const distance = countdown.getTime() - new Date().getTime();
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
@@ -28,7 +28,7 @@ const Mainstage = ({ speakers }) => {
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       setTimer(`${days}d ${hours}h ${minutes}m ${seconds}s left ⏳`);
       if (distance < 0) {
-        clearInterval(x);
+        clearInterval(interval);
         setTimer("We are now live! ✨");
       }
     }, 1000);
